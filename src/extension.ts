@@ -1,14 +1,9 @@
 import * as vscode from 'vscode'
 import applyTransform from '@vscodeshift/apply-jscodeshift'
 
-const transform = (): string | void | null | undefined => {
-  // REPLACE ME
-}
-
 export function activate(context: vscode.ExtensionContext): void {
-  const disposable = vscode.commands.registerCommand(
-    'extension.YOUR.COMMAND.HERE',
-    () => applyTransform(transform)
+  const disposable = vscode.commands.registerCommand('extension.cssToJss', () =>
+    applyTransform(require('jss-codemorphs/css-to-jss'))
   )
 
   context.subscriptions.push(disposable)

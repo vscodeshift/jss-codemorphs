@@ -1,9 +1,9 @@
 {
-  "name": "@vscodeshift/extension-skeleton",
+  "name": "jss-codemorphs",
   "version": "0.0.0-development",
-  "displayName": "@vscodeshift/extension-skeleton",
+  "displayName": "CSS/JSS Codemorphs",
   "publisher": "vscodeshift",
-  "description": "skeleton for a VSCode extension for applying JSCodeshift transforms",
+  "description": "command for converting from CSS to JSS",
   "engines": {
     "vscode": "^1.40.0"
   },
@@ -11,14 +11,14 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:extension.YOUR.COMMAND.HERE"
+    "onCommand:extension.cssToJss"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "extension.YOUR.COMMAND.HERE",
-        "title": "YOUR TITLE HERE"
+        "command": "extension.cssToJss",
+        "title": "Convert CSS to JSS"
       }
     ]
   },
@@ -46,13 +46,13 @@
     ],
     "prepare": {
       "path": "semantic-release-vsce",
-      "packageVsix": "extension-skeleton.vsix"
+      "packageVsix": "jss-codemorphs.vsix"
     },
     "publish": [
       "semantic-release-vsce",
       {
         "path": "@semantic-release/github",
-        "assets": "extension-skeleton.vsix"
+        "assets": "jss-codemorphs.vsix"
       }
     ]
   },
@@ -100,19 +100,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/vscodeshift/extension-skeleton.git"
+    "url": "https://github.com/vscodeshift/jss-codemorphs.git"
   },
   "keywords": [
-    "vscode",
-    "jscodeshift",
-    "codemods"
+    "jss",
+    "css",
+    "css-in-jss",
+    "codemods",
+    "vscodeshift",
+    "jscodeshift"
   ],
   "author": "Andy Edwards",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vscodeshift/extension-skeleton/issues"
+    "url": "https://github.com/vscodeshift/jss-codemorphs/issues"
   },
-  "homepage": "https://github.com/vscodeshift/extension-skeleton#readme",
+  "homepage": "https://github.com/vscodeshift/jss-codemorphs#readme",
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
@@ -166,7 +169,8 @@
   "dependencies": {
     "@babel/runtime": "^7.1.5",
     "@vscodeshift/apply-jscodeshift": "^1.0.12",
-    "jscodeshift": "^0.7.0"
+    "jscodeshift": "^0.7.0",
+    "jss-codemorphs": "^1.0.0"
   },
   "renovate": {
     "extends": [
